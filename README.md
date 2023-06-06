@@ -130,8 +130,9 @@ def close_price(ticker, time_interval: int = 1):
     return close[-1]
 ```
 ## 2. SFTP functions
- ref:[SFTP from Medium](https://medium.com/@keagileageek/paramiko-how-to-ssh-and-file-transfers-with-python-75766179de73)
- 
+ref: [SFTP from Medium](https://medium.com/@keagileageek/paramiko-how-to-ssh-and-file-transfers-with-python-75766179de73)
+SFTP (Secure File Transfer Protocol) is widely used in the finance industry for secure and reliable data transmission between financial institutions, clients, and partners. Manually uploading or downloading file from SFTP may involve human error, such as sending duplicated allocations, downloading the wrong statement and so on. Therefore, automating the process can help prevent the human error and improve the accuracy and efficiency.
+
 ```Python  
 from datetime import datetime 
 import paramiko #use for SFTP
