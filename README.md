@@ -1,6 +1,6 @@
 # Finance related Functions
 - [1. Stock Alert](#1-Stock-Alert)
-- [1. Automate SFTP](#1-Automate-SFTP)
+- [2. Automate SFTP](#2-Automate-SFTP)
 
 
 ## 1. Stock Alert
