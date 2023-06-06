@@ -3,7 +3,7 @@
     - [1.1. Request all session last price](#11-Request-all-session-last-price)
     - [1.2. Request a historical close price](#12-Request-a-historical-close-price)
 - [2. Automate SFTP](#2-Automate-SFTP)
-- [3. Option Expiration](#3-Option Expiration)
+- [3. Option Expiration](#3-Option-Expiration)
 
 
 ## 1. Stock Alert
