@@ -3,6 +3,7 @@
     - [1.1. Request all session last price](#11-Request-all-session-last-price)
     - [1.2. Request a historical close price](#12-Request-a-historical-close-price)
 - [2. Automate SFTP](#2-Automate-SFTP)
+- [3. Option Expiration](#2-Option-Expiration)
 
 
 ## 1. Stock Alert
@@ -157,3 +158,13 @@ def upload_sftp(filepath_quarry):
     ftp.close()
     print("Uploaded the allocation file @",str(datetime.now()))
 ```
+
+## 3. Option Expiration
+
+Even though Bloomberg MAV can display the '% From Strike;' or '$ From Strike' and we can combine with MLRT (market alert) to play alerts for certain options, it is hard for us to monitor all the changes across many options. This Option expiration program specific focus on giving alerts of the change in options and let traders know if it is in the money, at the money or out of money during the daily decision making process.
+
+We need to combine with the real time stock price using bloomberg api for this program.
+
+Please see [Option Expiration Program]() for details. 
+
+
