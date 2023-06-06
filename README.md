@@ -3,7 +3,7 @@
     - [1.1. Request all session last price](#11-Request-all-session-last-price)
     - [1.2. Request a historical close price](#12-Request-a-historical-close-price)
 - [2. Automate SFTP](#2-Automate-SFTP)
-- [3. Option Expiration](#2-Option-Expiration)
+- [3. Option Expiration](#3-Option Expiration)
 
 
 ## 1. Stock Alert
@@ -165,6 +165,6 @@ Even though Bloomberg MAV can display the '% From Strike;' or '$ From Strike' an
 
 We need to combine with the real time stock price using bloomberg api for this program.
 
-Please see [Option Expiration Program]() for details. 
+Please see [Option Expiration Program](https://github.com/fahygao/Finance-related-functions/blob/main/Option_expiration_v2.ipynb) for details. 
 
 
