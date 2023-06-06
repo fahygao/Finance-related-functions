@@ -1,0 +1,2 @@
+Ticker|Option name|Strikes|P/C|L/S|Quantity|last|current|first
+QQQ US EQUITY|QQQ US 05/09/23 P321|321.0|P|L|240.0|O: [-1,-0.5) check|O: [-1,-0.5) check|False
