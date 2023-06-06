@@ -1,4 +1,9 @@
-# StockAlert
+# Finance related Functions
+- [1. Stock Alert](#1-Stock-Alert)
+- [1. Automate SFTP](#1-Automate-SFTP)
+
+
+## 1. Stock Alert
 Here is a general documentation to show how to pull stock alert from Bloomberg using BQL
 
 Motivation: Bloomberg documentation is written in C++, and blpapi do not have examples of how to use the function keys to request real-time price and etc. When I first created the bloomberg api to request the last price, it took me a long time to understand the process of sending the right request. Therefore, I think that it might be helpful to list out my approach and see if it can help others.
@@ -123,4 +128,24 @@ def close_price(ticker, time_interval: int = 1):
         close.append(data[i]['close'])
     session.stop()
     return close[-1]
+```
+## 2. SFTP functions
+ ref:[SFTP from Medium](https://medium.com/@keagileageek/paramiko-how-to-ssh-and-file-transfers-with-python-75766179de73)
+ 
+```Python  
+from datetime import datetime 
+import paramiko #use for SFTP
+def upload_sftp(filepath_quarry):
+    """Upload allocation file to **** sftp"""
+    HOSTNAME = "<ftp..com>"
+    USERNAME = "<@.com>"
+    PASSWORD = "<PASS>"
+    name_file = "CUSTOM_NAME"+datetime.now().strftime("%y%m%d_%H%M%S")+".xlsx"
+
+    client=paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(hostname=HOSTNAME, username=USERNAME, password=PASSWORD,allow_agent=False,look_for_keys=False)
+    ftp=client.open_sftp()
+    ftp.close()
+    print("Uploaded the allocation file @",str(datetime.now()))
 ```
