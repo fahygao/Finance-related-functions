@@ -1,5 +1,7 @@
 # Finance related Functions
 - [1. Stock Alert](#1-Stock-Alert)
+    - [1.1. Request all session last price](#11-Request-all-session-last-price)
+    - [1.2. Request a historical close price](#12-Request-a-historical-close-price)
 - [2. Automate SFTP](#2-Automate-SFTP)
 
 
@@ -14,11 +16,10 @@ Here is a general documentation to show how to pull stock alert from Bloomberg u
 Motivation: Bloomberg documentation is written in C++, and blpapi do not have examples of how to use the function keys to request real-time price and etc. When I first created the bloomberg api to request the last price, it took me a long time to understand the process of sending the right request. Therefore, I think that it might be helpful to list out my approach and see if it can help others.
 
 
-
 Functions
 ---
 
-**Request the all session last price**
+### 1.1 Request all session last price
 We can also use this to get today's high and low. Please uncomment ```print(msg)``` to see more attributes.
 
 ``` Python 
@@ -63,7 +64,7 @@ def allsession_lp(ticker):
     return last_price_f
 ```
 
-**Request a historical close price**
+### 1.2 Request a historical close price
 It is a bit tricky than requesting the all session price, since we need to take UTC into consideration and use different 
 
 ``` Python 
