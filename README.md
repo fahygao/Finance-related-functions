@@ -167,4 +167,26 @@ We need to combine with the real time stock price using bloomberg api for this p
 
 Please see [Option Expiration Program](https://github.com/fahygao/Finance-related-functions/blob/main/Option_expiration_v2.ipynb) for details. 
 
+## 4. BQNT functions: 
 
+To avoid long waiting time using excel to fectch AIM related data, we can directly use api from BQNL. Here are several functions I wrote to help accelerate fetching details related to portfolios.
+
+Limits: BQNT is still under development, and the major drawback is that Bloomberg has not created APIs for monthly PNL and daily trade details. Hope to see more functions related to trades' activities in BQNT. 
+
+```Python 
+
+bq=bql.Service()
+AIM_FS_PL=bq.univ.members(type='aim',accounts=['ACCT_NAME'],pxnum=5369)
+dictionary={'Unnamed: 0':bq.data.ts_name()['value'],
+            'Currency':bq.data.CURRENCY()['value'],
+            'Security_Type':bq.data.SECURITY_TYP()['value'],
+            'Total P&L':bq.data.TOTAL_PL()['value'],
+           'YTD P&L':bq.data.YTD_TOTAL_PL()['value'],
+           'realized P&L':bq.data.RLZD_PL()['value'],
+           'unrealized P&L':bq.data.UNRLZD_PL()['value'],
+           'closed':bq.data.IS_CLOSED()['value'],}
+req_FS=bql.Request(AIM_FS_PL,dictionary)
+resp_FS=bq.execute(req_FS)
+aim_fund_shay=pd.DataFrame(({r.name:r.df()[r.name] for r in resp_FS}))
+aim_fund_shay.to_excel("PATH_TO_SAVE_FILES",index=False)
+```
