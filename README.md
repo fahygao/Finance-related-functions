@@ -174,7 +174,7 @@ To avoid long waiting time using excel to fectch AIM related data, we can direct
 Limits: BQNT is still under development, and the major drawback is that Bloomberg has not created APIs for monthly PNL and daily trade details. Hope to see more functions related to trades' activities in BQNT. 
 
 ```Python 
-
+#request portfolio details
 bq=bql.Service()
 AIM_FS_PL=bq.univ.members(type='aim',accounts=['ACCT_NAME'],pxnum=5369)
 dictionary={'Unnamed: 0':bq.data.ts_name()['value'],
@@ -184,9 +184,22 @@ dictionary={'Unnamed: 0':bq.data.ts_name()['value'],
            'YTD P&L':bq.data.YTD_TOTAL_PL()['value'],
            'realized P&L':bq.data.RLZD_PL()['value'],
            'unrealized P&L':bq.data.UNRLZD_PL()['value'],
-           'closed':bq.data.IS_CLOSED()['value'],}
+           'closed':bq.data.IS_CLOSED()['value'],
+           'Position':bq.data.ts_position()['value'],
+            'Net MV': bq.data.NET_MARKET_VAL()['value'],
+            'Tag Level 2':bq.data.tag_level()['value'],
+            'Account Code':bq.data.acct_name()['value'],
+            'Bought_Sold': bq.data.OPEN_TRADE_POSITION()['value']-bq.data.ts_position()['value'],
+            'Open Trade Position': bq.data.OPEN_TRADE_POSITION()['value'],
+            'Asset Type':bq.data.asset_type()['value'],
+            'Price':bq.data.PX_LAST()['value'],}
 req_FS=bql.Request(AIM_FS_PL,dictionary)
 resp_FS=bq.execute(req_FS)
 aim_fund_shay=pd.DataFrame(({r.name:r.df()[r.name] for r in resp_FS}))
 aim_fund_shay.to_excel("PATH_TO_SAVE_FILES",index=False)
+```
+
+```Python
+
+
 ```
