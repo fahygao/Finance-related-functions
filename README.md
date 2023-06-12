@@ -14,7 +14,7 @@ refs:
 
 Here is a general documentation of all the finance related functions I created. 
 
-Motivation: Bloomberg documentation is written in C++, and blpapi do not have examples of how to use the function keys to request real-time price and etc. When I first created the bloomberg api to request the last price, it took me a long time to understand the process of sending the right request. Therefore, I think that it might be helpful to list out my approach and see if it can help others.
+Motivation: Many processes in daily routine are machanical and normally involve human errors due to careless mistake with high potential risk, so it is necessary to simplify the process with automation and make sure the program work 100% each time. Besides, Bloomberg documentation is written in C++, and blpapi do not have examples of how to use the function keys to request real-time price and etc. When I first created the bloomberg api to request the last price, it took me a long time to understand the process of sending the right request. Therefore, I think that it might be helpful to list out my approach and see if it can help others.
 
 
 Functions
