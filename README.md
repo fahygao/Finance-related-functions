@@ -12,7 +12,7 @@ refs:
 2. [Excel Bloomberg APIs](https://github.com/fahygao/Finance-related-functions/blob/main/BQL%20for%20AIM%20(1)%20(3)%20(1).xlsx)
 3. [BQLapi](https://github.com/fahygao/Finance-related-functions/blob/main/Current%20Day%20AIM%20Holdings%20RMON_add%20(2).docx)
 
-Here is a general documentation to show how to pull stock alert from Bloomberg using BQL. 
+Here is a general documentation of all the finance related functions I created. 
 
 Motivation: Bloomberg documentation is written in C++, and blpapi do not have examples of how to use the function keys to request real-time price and etc. When I first created the bloomberg api to request the last price, it took me a long time to understand the process of sending the right request. Therefore, I think that it might be helpful to list out my approach and see if it can help others.
 
